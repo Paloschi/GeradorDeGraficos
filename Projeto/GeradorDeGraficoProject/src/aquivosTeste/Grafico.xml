@@ -1,0 +1,7 @@
+  <data titulo="Heros Dota">
+      <elemento nome="Rikimaro">
+          <atributo nome="Inteligencia" valor="10.2"/>
+          <atributo nome="Agilidade" valor="48.2"/>
+          <atributo nome="Forca" valor="15.2"/>
+      </elemento>
+  </data>
