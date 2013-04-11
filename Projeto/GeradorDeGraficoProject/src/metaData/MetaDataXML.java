@@ -1,19 +1,72 @@
-/***********************************************************************
- * Module:  MetaDataXML.java
- * Author:  Paloschi
- * Purpose: Defines the Class MetaDataXML
- ***********************************************************************/
-
+/**
+ * *********************************************************************
+ * Module: MetaDataXML.java Author: Paloschi Purpose: Defines the Class
+ * MetaDataXML
+ **********************************************************************
+ */
 package metaData;
 
-import java.util.*;
+import static org.apache.commons.digester3.binder.DigesterLoader.newLoader;
+import java.io.File;
+import java.io.IOException;
+import metaData.util.Data;
+import org.apache.commons.digester3.Digester;
+import org.apache.commons.digester3.xmlrules.FromXmlRulesModule;
+import org.xml.sax.SAXException;
 
-/** @pdOid 8a0dc54c-3859-4492-b3cc-7be17e73db0d */
+
 public class MetaDataXML extends AbstractMetaDataGraph {
-   /** @pdOid 1ccee428-de7d-4c2d-af27-3c1cb86c70cf */
-   @Override
-   public void generateData(String path) {
-      // TODO: aqui fica o codigo que transforma o XML em meta data
-   }
 
+    /**
+     * Titulo do grafico
+     */
+    private String titulo;
+    /**
+     * String -> titulo do elemento Double -> valor do elemento
+     */
+    private Data dados;
+    
+    @Override
+    public void generateData(String path) {
+        final String rulesfileName = "./src/metaData/util/xmlrules.xml";
+        String datafileName = path;
+
+        Digester d = newLoader(new FromXmlRulesModule() {
+            @Override
+            protected void loadRules() {
+                loadXMLRules(new File(rulesfileName));
+            }
+        }).newDigester();
+
+
+        Data data = new Data();
+        
+        d.push(data);
+
+        // Process the input file.
+        try {
+            File srcfile = new java.io.File(datafileName);
+            d.parse(srcfile);
+        } catch (IOException ioe) {
+            System.out.println("Error reading input file:" + ioe.getMessage());
+            System.exit(-1);
+        } catch (SAXException se) {
+            System.out.println("Error parsing input file:" + se.getMessage());
+            System.exit(-1);
+        }
+        
+     
+
+        System.out.println(data.getTitulo());
+    }
+    
+    
+    public static void main(String[] args){
+        MetaDataGraph metadata = new MetaDataXML();
+        
+        metadata.generateData("C:\\1 - UTFPR\\6 periodo\\frameWork\\GeradorDeGraficos\\Projeto\\GeradorDeGraficoProject\\src\\aquivosTeste\\Grafico.xml");
+        
+
+    }
+            
 }
