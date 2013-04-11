@@ -43,6 +43,7 @@ public class GraphFactory {
             case G_PIZZA:
                 return new GraficoPizzaJFX();
             case G_SPIDER:
+			//testando o teste do git
                 return new GraficoSpiderJFX();
 
         }
