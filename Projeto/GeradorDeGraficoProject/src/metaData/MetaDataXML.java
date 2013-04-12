@@ -18,10 +18,6 @@ import org.xml.sax.SAXException;
 public class MetaDataXML extends AbstractMetaDataGraph {
 
     /**
-     * Titulo do grafico
-     */
-    private String titulo;
-    /**
      * String -> titulo do elemento Double -> valor do elemento
      */
     private Data dados;
@@ -54,19 +50,21 @@ public class MetaDataXML extends AbstractMetaDataGraph {
             System.out.println("Error parsing input file:" + se.getMessage());
             System.exit(-1);
         }
-        
-     
-
-        System.out.println(data.getTitulo());
+       
     }
     
     
     public static void main(String[] args){
         MetaDataGraph metadata = new MetaDataXML();
         
-        metadata.generateData("C:\\1 - UTFPR\\6 periodo\\frameWork\\GeradorDeGraficos\\Projeto\\GeradorDeGraficoProject\\src\\aquivosTeste\\Grafico.xml");
-        
+        metadata.generateData("C:\\1 - UTFPR\\6 periodo\\frameWork\\GeradorDeGraficos\\Projeto\\GeradorDeGraficoProject\\src\\aquivosTeste\\data.xml");
 
+    }
+    
+    
+    @Override
+    public Data getData() {
+        return dados;
     }
             
 }
