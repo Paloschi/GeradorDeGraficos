@@ -57,16 +57,9 @@ public class MetaDataXML extends AbstractMetaDataGraph {
         
      
 
-        System.out.println(data.getTitulo());
+        System.out.println(data.getElemento().size());
     }
     
     
-    public static void main(String[] args){
-        MetaDataGraph metadata = new MetaDataXML();
-        
-        metadata.generateData("C:\\1 - UTFPR\\6 periodo\\frameWork\\GeradorDeGraficos\\Projeto\\GeradorDeGraficoProject\\src\\aquivosTeste\\Grafico.xml");
-        
-
-    }
-            
+     
 }
