@@ -1,3 +1,11 @@
+
+import com.sun.corba.se.impl.orbutil.graph.Graph;
+import graph.GraphJFX;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import metaData.MetaDataGraph;
+
 /***********************************************************************
  * Module:  JGraphApp.java
  * Author:  Paloschi
@@ -18,6 +26,23 @@ public class JGraphApp {
     public static void main(String[] args){
         // Inicia a aplicaçao aqui
         
+        
+         GraphFactory gf = new GraphFactory();
+         MetaDataGraphFactory mf = new MetaDataGraphFactory();
+         
+         MetaDataGraph metadata = mf.build(MetaDataGraphFactory.MD_XML);
+       try {
+           metadata.generateData("c:/teste.xls");
+       } catch (FileNotFoundException ex) {
+           Logger.getLogger(JGraphApp.class.getName()).log(Level.SEVERE, null, ex);
+       }
+         
+         GraphJFX graph =  gf.build(GraphFactory.G_BARRAS);
+         graph.generateGraph(metadata);
+         
+         
+        
+         
         
         
     }

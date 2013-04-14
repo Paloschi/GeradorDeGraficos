@@ -8,7 +8,10 @@ package metaData;
 
 import static org.apache.commons.digester3.binder.DigesterLoader.newLoader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import metaData.util.Data;
 import org.apache.commons.digester3.Digester;
 import org.apache.commons.digester3.xmlrules.FromXmlRulesModule;
@@ -23,7 +26,8 @@ public class MetaDataXML extends AbstractMetaDataGraph {
     private Data dados;
     
     @Override
-    public void generateData(String path) {
+    public void generateData(String path)  throws FileNotFoundException  {
+        try { 
         final String rulesfileName = "./src/metaData/util/xmlrules.xml";
         String datafileName = path;
 
@@ -40,31 +44,39 @@ public class MetaDataXML extends AbstractMetaDataGraph {
         d.push(data);
 
         // Process the input file.
-        try {
+
             File srcfile = new java.io.File(datafileName);
+              
             d.parse(srcfile);
-        } catch (IOException ioe) {
-            System.out.println("Error reading input file:" + ioe.getMessage());
-            System.exit(-1);
-        } catch (SAXException se) {
-            System.out.println("Error parsing input file:" + se.getMessage());
-            System.exit(-1);
+            
+        this.dados = data;
+        Logger.getGlobal().setLevel(Level.ALL);
+        
+        Logger.getLogger(MetaDataXML.class.getName()).log(Level.INFO, "Data Gerada: Arquivo - " + srcfile.getName()  );
+        
+        } catch (IOException | SAXException ex) {
+            Logger.getLogger(MetaDataXML.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
+        
        
     }
-    
-    
-    public static void main(String[] args){
-        MetaDataGraph metadata = new MetaDataXML();
+  
         
-        metadata.generateData("C:\\1 - UTFPR\\6 periodo\\frameWork\\GeradorDeGraficos\\Projeto\\GeradorDeGraficoProject\\src\\aquivosTeste\\data.xml");
-
-    }
-    
-    
     @Override
     public Data getData() {
         return dados;
     }
+    
+//    @Test
+//    public void teste() throws FileNotFoundException{
+//        MetaDataGraph metadata = new MetaDataXML();
+//        
+//        metadata.generateData("C:\\1 - UTFPR\\6 periodo\\frameWork\\GeradorDeGraficos\\Projeto\\GeradorDeGraficoProject\\src\\aquivosTeste\\data.xml");
+//
+//    }
+    
+
             
 }

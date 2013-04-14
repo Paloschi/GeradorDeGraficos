@@ -5,12 +5,10 @@
  * GraphFactory
  * *********************************************************************
  */
-
 import graph.GraficoBarrasJFX;
 import graph.GraficoPizzaJFX;
 import graph.GraficoSpiderJFX;
 import graph.GraphJFX;
-
 
 /**
  * @pdOid 10acf71e-7548-428d-945a-10e4bd205ebb
@@ -43,11 +41,10 @@ public class GraphFactory {
             case G_PIZZA:
                 return new GraficoPizzaJFX();
             case G_SPIDER:
-			//testando o teste do git
+                //testando o teste do git
                 return new GraficoSpiderJFX();
-
+            default:
+                throw new UnsupportedOperationException("Tipo de Grafico não suportado!");
         }
-
-        return null;
     }
 }

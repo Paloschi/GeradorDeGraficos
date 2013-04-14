@@ -35,7 +35,9 @@ public class MetaDataGraphFactory {
                 return new MetaDataXML();
             case MD_XLS :
                 return new MetaDataXLS();
+            default:
+                throw new UnsupportedOperationException("Tipo de MetaData não suportado!");
         }
-        return null;
+
     }
 }

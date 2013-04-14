@@ -7,6 +7,8 @@
 package graph;
 
 import java.util.*;
+import javafx.stage.Stage;
+import metaData.MetaDataGraph;
 
 /** @pdOid 6e4d5cd0-8334-4701-acab-d87f6aab3408 */
 public class GraficoBarrasJFX extends AbstractGraphJFX {
@@ -14,5 +16,15 @@ public class GraficoBarrasJFX extends AbstractGraphJFX {
    public void generateGraph() {
       // TODO: implement
    }
+
+    @Override
+    public void generateGraph(MetaDataGraph data) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

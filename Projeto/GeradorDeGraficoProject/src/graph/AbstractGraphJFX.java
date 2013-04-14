@@ -7,10 +7,11 @@
 package graph;
 
 import java.util.*;
+import javafx.application.Application;
 import metaData.AbstractMetaDataGraph;
 
 /** @pdOid 26b5cccc-910b-424b-a04d-7bc70c3f5f24 */
-public abstract class AbstractGraphJFX implements GraphJFX {
+public abstract class AbstractGraphJFX extends Application implements GraphJFX  {
    /** @pdOid c5f5a2a0-2246-4026-831e-25708e8a7ae8 */
    private AbstractMetaDataGraph metaData;
    
