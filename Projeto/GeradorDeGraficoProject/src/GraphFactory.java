@@ -27,6 +27,10 @@ public class GraphFactory {
      * @pdOid f61f8adf-fccf-4b30-a98b-85e32926d850
      */
     public static final int G_SPIDER = 3;
+    
+    public static final int G_COLUNAS = 4;
+    
+    public static final int G_RANKING = 5;
 
     /**
      * @pdOid bd4a2663-8e89-4939-956d-22eb9811da0e
@@ -42,6 +46,10 @@ public class GraphFactory {
                 return new GraficoPizzaJFX();
             case G_SPIDER:
                 //testando o teste do git
+                return new GraficoSpiderJFX();
+            case G_COLUNAS:
+                return new GraficoSpiderJFX();
+            case G_RANKING:
                 return new GraficoSpiderJFX();
             default:
                 throw new UnsupportedOperationException("Tipo de Grafico não suportado!");
