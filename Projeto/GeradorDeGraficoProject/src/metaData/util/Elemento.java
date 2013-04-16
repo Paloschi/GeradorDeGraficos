@@ -15,7 +15,7 @@ public class Elemento {
    /** @pdOid 7b680e47-2794-4f54-a2c5-dccdfe9d0ca8 */
    private String nome;
    
-   /** @pdRoleInfo migr=no name=Atributo assc=association1 coll=java.util.Collection impl=java.util.HashSet mult=0..* type=Composition */
+   /** @pdRoleInfo migr=no name=Atributo assc=association1 coll=java.util.Collection impl=java.util.ArrayList mult=0..* type=Composition */
    public java.util.Collection<Atributo> atributo;
    
    /** @pdOid d8fa832e-cd26-4604-8d8c-dfe5b4ee3032 */
@@ -33,14 +33,14 @@ public class Elemento {
    /** @pdGenerated default getter */
    public java.util.Collection<Atributo> getAtributo() {
       if (atributo == null)
-         atributo = new java.util.HashSet<Atributo>();
+         atributo = new java.util.ArrayList<Atributo>();
       return atributo;
    }
    
    /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorAtributo() {
       if (atributo == null)
-         atributo = new java.util.HashSet<Atributo>();
+         atributo = new java.util.ArrayList<Atributo>();
       return atributo.iterator();
    }
    
@@ -58,7 +58,7 @@ public class Elemento {
       if (newAtributo == null)
          return;
       if (this.atributo == null)
-         this.atributo = new java.util.HashSet<Atributo>();
+         this.atributo = new java.util.ArrayList<Atributo>();
       if (!this.atributo.contains(newAtributo))
          this.atributo.add(newAtributo);
    }

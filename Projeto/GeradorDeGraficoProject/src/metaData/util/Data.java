@@ -33,14 +33,14 @@ public class Data {
    /** @pdGenerated default getter */
    public java.util.Collection<Elemento> getElemento() {
       if (elemento == null)
-         elemento = new java.util.HashSet<Elemento>();
+         elemento = new java.util.ArrayList<Elemento>();
       return elemento;
    }
    
    /** @pdGenerated default iterator getter */
    public java.util.Iterator getIteratorElemento() {
       if (elemento == null)
-         elemento = new java.util.HashSet<Elemento>();
+         elemento = new java.util.ArrayList<Elemento>();
       return elemento.iterator();
    }
    
@@ -58,7 +58,7 @@ public class Data {
       if (newElemento == null)
          return;
       if (this.elemento == null)
-         this.elemento = new java.util.HashSet<Elemento>();
+         this.elemento = new java.util.ArrayList<Elemento>();
       if (!this.elemento.contains(newElemento))
          this.elemento.add(newElemento);
    }
