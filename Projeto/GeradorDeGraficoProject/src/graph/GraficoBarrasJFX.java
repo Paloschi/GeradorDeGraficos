@@ -34,9 +34,9 @@ public class GraficoBarrasJFX extends AbstractGraphJFX {
     @Override
     public void generateGraph(MetaDataGraph data) {
           this.data = data;
-         System.out.println(this.data);  
+         //System.out.println(this.data);  
         String[] a = {""};
-        System.out.println(data.getData().elemento);
+        System.out.println(this.data.getData().elemento);
         launch(a);
     }
 

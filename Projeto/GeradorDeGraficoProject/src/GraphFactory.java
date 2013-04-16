@@ -18,24 +18,24 @@ public class GraphFactory {
     /**
      * @pdOid 8a75d11f-baa4-41fa-b451-e202050fd0e1
      */
-    public static final int G_BARRAS = 1;
+    public static final String G_BARRAS = "BARRAS";
     /**
      * @pdOid ce03be78-06d9-4b7e-8b73-e9591169c0a2
      */
-    public static final int G_PIZZA = 2;
+    public static final String G_PIZZA = "PIZZA";
     /**
      * @pdOid f61f8adf-fccf-4b30-a98b-85e32926d850
      */
-    public static final int G_SPIDER = 3;
+    public static final String G_SPIDER = "SPIDER";
     
-    public static final int G_COLUNAS = 4;
+    public static final String G_COLUNAS = "COLUNAS";
     
-    public static final int G_RANKING = 5;
+    public static final String G_RANKING = "RANKING";
 
     /**
      * @pdOid bd4a2663-8e89-4939-956d-22eb9811da0e
      */
-    public GraphJFX build(int type_graph) {
+    public GraphJFX build(String type_graph) {
         // TODO: implement
 
         switch (type_graph) {

@@ -18,16 +18,16 @@ public class MetaDataGraphFactory {
     /**
      * @pdOid 9fe67506-d11d-4ada-97d7-d0ac3294d865
      */
-    public static final int MD_XML = 1;
+    public static final String MD_XML = "XML";
     /**
      * @pdOid 3028419b-72e5-48cc-88a2-b905b8a56b76
      */
-    public static final int MD_XLS = 2;
+    public static final String MD_XLS = "XLS";
 
     /**
      * @pdOid 6c3f25a5-184e-4e1a-af36-7d69500fa956
      */
-    public MetaDataGraph build(int type_metaData) {
+    public MetaDataGraph build(String type_metaData) {
 
         switch(type_metaData)
         {
