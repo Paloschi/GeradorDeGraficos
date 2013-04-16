@@ -21,6 +21,28 @@
 
       </elemento>
       
+      
+            <elemento nome="Rikimaro">
+          <atributo nome="Inteligencia" valor="23"/> # quarto quadrante
+          <atributo nome="Agilidade" valor="22"/>
+          <atributo nome="Forca" valor="11"/> # terceiro quadrante
+<atributo nome="Forca" valor="8"/> # terceiro quadrante
+    <atributo nome="Forca" valor="8"/> # terceiro quadrante
+    <atributo nome="Forca" valor="23"/> # terceiro quadrante
+    <atributo nome="Forca" valor="33"/> # terceiro quadrante
+    <atributo nome="Forca" valor="34"/> # terceiro quadrante
+    <atributo nome="Forca" valor="8"/> # terceiro quadrante
+    <atributo nome="Forca" valor="34"/> # terceiro quadrante
+    <atributo nome="Forca" valor="53"/> # terceiro quadrante
+    <atributo nome="Forca" valor="23"/> # terceiro quadrante
+    <atributo nome="Forca" valor="34"/> # terceiro quadrante
+    <atributo nome="Forca" valor="34"/> # terceiro quadrante
+    <atributo nome="Forca" valor="8"/> # terceiro quadrante
+    <atributo nome="Forca" valor="14"/> # terceiro quadrante
+    
+
+
+      </elemento>
 
   </data>
     
